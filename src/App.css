@@ -1,0 +1,10 @@
+.logo {
+  float: left;
+  height: 60px;
+  width: 135px;
+  margin: 5px;
+  border-radius: 10px;
+  background-image: url("https://www.godoo.ch/en/logo-light-full.svg");
+  background-repeat: no-repeat;
+  background-size: 80%;
+}

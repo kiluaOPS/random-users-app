@@ -1,14 +1,13 @@
-import React from 'react';import { useParams } from "react-router-dom";
+import React from "react";
 
 function UserDetail(props) {
-    
-    const { userId } = useParams();
-    return (
-        <div>
-            <h2>Page under construction</h2>
-            <p>User id from params: {userId}</p>
-        </div>
-    );
+  return (
+    <div>
+      <h2>Component under construction</h2>
+      <h3>User Details</h3>
+      <p>{JSON.stringify(props.user, null, "\t")}</p>
+    </div>
+  );
 }
 
 export default UserDetail;

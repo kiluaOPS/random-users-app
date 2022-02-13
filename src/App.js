@@ -1,60 +1,48 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { Layout, Menu } from 'antd';
-import { UserOutlined, HomeOutlined } from '@ant-design/icons';
+import { Layout, Menu } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
+import "./App.css";
+import Home from "./pages/Home";
+import Users from "./pages/Users/Users";
+import NotFound from "./pages/NotFound";
+import { UsersContextProvider } from "./providers/UsersContextProvider";
 
-
-import './assets/css/App.css';
-import Home from "./pages/Home/Home";
-import Users from './pages/Users/Users';
-import NotFound from "./pages/NotFound/NotFound";
-import UsersContext from "./store/users-context";
-
-
-const { Header, Content, Sider } = Layout;
+const { Header, Content } = Layout;
 
 function App() {
-  
   return (
-    <Layout style={{ minHeight: "100vh"}}>
-      <Header style={{ padding: 0 }}>
-        <Menu selectable={false} theme="dark" style={{ fontSize: 35 }}>
-        <Menu.Item
-              key = "1"
-            >
-            <Link to="home">
-            <HomeOutlined style={{ fontSize: 35, color: '#08c' }}/> Godoo
+    <Layout style={{ minHeight: "100vh" }}>
+      <Header>
+        <Link to={"home"}>
+          <div className="logo" />
+        </Link>
+        <Menu selectable={false} theme="dark" mode="horizontal">
+          <Menu.Item key="users-menu-key">
+            <Link to="users">
+              <UserOutlined /> Users
             </Link>
           </Menu.Item>
         </Menu>
       </Header>
-      <Layout >
-        <Sider width={200} className="site-layout-background">
-          <Menu selectable={false} theme="dark" style={{ fontSize: 25 }}>
-            <Menu.Item
-              key = "2"
-            >
-              <Link to="/Users">
-              <UserOutlined style={{ fontSize: 25 }}/> Users
-              </Link>
-            </Menu.Item>
-          </Menu>
-        </Sider>
-        <Layout style={{ padding: '0 24px 24px'}}>
+      <Layout>
+        <Layout style={{ padding: "0 10px 10px" }}>
           <Content
             className="site-layout-background"
             style={{
-              padding: 24,
+              padding: 0,
               margin: 0,
-              background: "#fff"
+              background: "#fff",
             }}
           >
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="home" element={<Home />} />
-              <Route path="Users/*" element={<Users />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <UsersContextProvider>
+              <Routes>
+                <Route index element={<Home />} />
+                <Route path="home" element={<Home />} />
+                <Route path="users/*" element={<Users />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </UsersContextProvider>
           </Content>
         </Layout>
       </Layout>
@@ -63,5 +51,3 @@ function App() {
 }
 
 export default App;
-
-

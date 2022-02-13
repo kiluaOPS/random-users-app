@@ -1,17 +1,22 @@
 .user-item {
   margin-left: 20px;
-  
-  span{
+
+  span {
     margin-top: 5px;
-    color: rgba(0, 0, 0, 0.45)
-  }
-  
-  h4, p, span {
-    font-size: 1.25em;
+    color: rgba(0, 0, 0, 0.45);
   }
 
-  .anticon {
+  h4,
+  p,
+  span {
+    font-size: 1em;
+  }
+
+  .anticon-delete {
     font-size: 25px;
   }
 }
 
+.ant-avatar-circle {
+  border: 2px #eb0089c0 solid;
+}
