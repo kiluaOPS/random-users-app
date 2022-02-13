@@ -14,8 +14,8 @@ function UsersList(props) {
         onChange={usersContext.onFilter}
         defaultValue=""
         addonBefore={<SearchOutlined />}
-        size="large"
-        style={{ padding: "10px" }}
+        size="medium"
+        style={{ padding: "10px 25px" }}
       />
       <List
         className="user-list"
@@ -33,7 +33,7 @@ function UsersList(props) {
           pageSize: usersContext.pagination.results,
           // Api missing to know the total available
           total: 75,
-          style: { paddingRight: "10px" },
+          style: { paddingRight: "25px" },
         }}
         renderItem={(user) => (
           <UserCard

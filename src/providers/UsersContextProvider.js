@@ -43,7 +43,7 @@ export const UsersContextProvider = (props) => {
     // there is no api call for searching with a filter
     // filtering existing result set
     return users.filter((user) =>
-      user.name.first.toLowerCase().startsWith(filter)
+      user.name.first.toLowerCase().startsWith(filter.toLowerCase())
     );
   };
 

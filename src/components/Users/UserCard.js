@@ -53,7 +53,7 @@ function UserCard(props) {
                     preview={false}
                     alt="CH"
                     src="./switzerland-flag.png"
-                    height={20}
+                    height={15}
                     style={{ paddingLeft: 5 }}
                   />
                 ) : (
