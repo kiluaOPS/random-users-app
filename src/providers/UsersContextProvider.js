@@ -48,19 +48,18 @@ export const UsersContextProvider = (props) => {
   };
 
   const getUser = (uuid) => {
-    var user = users.filter((user) => user.login.uuid == uuid);
+    var user = users.filter((user) => user.login.uuid === uuid);
     return user;
   };
 
   const handleDelete = (uuid) => {
     setUsers((prevState) => {
-      return prevState.filter((user) => user.login.uuid != uuid);
+      return prevState.filter((user) => user.login.uuid !== uuid);
     });
     // Delete api call here
   };
 
   const handlePaginationChange = (pagination) => {
-    console.log(pagination);
     setPagination(pagination);
   };
 
