@@ -42,12 +42,12 @@ function UserCard(props) {
           description={
             <Row className="user-item-description" style={{ display: "flex" }}>
               <Col style={{ flex: "0 1 200px" }}>{props.email}</Col>
-              <br />
-              <Col style={{ flex: "0 1 250px" }}>
+              <Col style={{ flex: "1 4 300px" }}>
                 {props.location.city}, {props.location.state},{" "}
                 {props.location.country}
               </Col>
-              <Col style={{ flex: "0 1 50px" }}>
+              
+              <Col style={{ flex: "6 1 25px" }}>
                 {props.nationality === "CH" ? (
                   <Image
                     preview={false}
