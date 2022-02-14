@@ -3,7 +3,6 @@
 
   span {
     margin-top: 5px;
-    color: rgba(0, 0, 0, 0.45);
   }
 
   h4,
@@ -11,9 +10,12 @@
   span {
     font-size: 1em;
   }
-
   .anticon-delete {
     font-size: 25px;
+  }
+
+  &-description {
+    margin-top: 10px;
   }
 }
 

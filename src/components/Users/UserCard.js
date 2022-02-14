@@ -1,11 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Avatar, List, Skeleton, Image } from "antd";
-import {
-  WomanOutlined,
-  ManOutlined,
-  DeleteOutlined,
-} from "@ant-design/icons";
+import { Avatar, List, Skeleton, Image, Row, Col } from "antd";
+import { WomanOutlined, ManOutlined, DeleteOutlined } from "@ant-design/icons";
 
 import "./UserCard.scss";
 
@@ -26,7 +22,7 @@ function UserCard(props) {
           avatar={
             <Link to={`/users/${props.uuid}`}>
               <Avatar
-                size={{ xs: 60, sm: 80, md: 80, lg: 80, xl: 80, xxl: 80 }}
+                size={{ xs: 80, sm: 80, md: 80, lg: 80, xl: 90, xxl: 100 }}
                 src={props.picture.large}
               />
             </Link>
@@ -35,19 +31,23 @@ function UserCard(props) {
             <Link to={`/users/${props.uuid}`}>
               {props.name.first} {props.name.last}
               <span style={{ marginLeft: 5 }}>
-                {props.gender === "female" ? <WomanOutlined /> : <ManOutlined />}
+                {props.gender === "female" ? (
+                  <WomanOutlined />
+                ) : (
+                  <ManOutlined />
+                )}
               </span>
             </Link>
           }
           description={
-            <>
-              <span>{props.email}</span>
+            <Row className="user-item-description" style={{ display: "flex" }}>
+              <Col style={{ flex: "0 1 200px" }}>{props.email}</Col>
               <br />
-              <span>
-                {props.location.country}, {props.location.state},{" "}
-                {props.location.city}
-              </span>
-              <span>
+              <Col style={{ flex: "0 1 250px" }}>
+                {props.location.city}, {props.location.state},{" "}
+                {props.location.country}
+              </Col>
+              <Col style={{ flex: "0 1 50px" }}>
                 {props.nationality === "CH" ? (
                   <Image
                     preview={false}
@@ -59,8 +59,8 @@ function UserCard(props) {
                 ) : (
                   ""
                 )}
-              </span>
-            </>
+              </Col>
+            </Row>
           }
         />
       </Skeleton>
