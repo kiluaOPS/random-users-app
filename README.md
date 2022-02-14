@@ -1,6 +1,10 @@
 # Random User Application
 
-URL: https://rndm-users-app.netlify.app 
+URL: https://rndm-users-app.netlify.app
+
+Note:
+https://randomuser.me/documentation#pagination does not have a filtering parameter therefore when filtering by name I have decided to use only the list of users that are already present in the page.
+By clicking on User avatar/name the user is redirected to a "detail" view. However this was not implemented as not part of requirements.
 
 ###### UserCard
 
@@ -20,3 +24,4 @@ URL: https://rndm-users-app.netlify.app
 ###### UserDetail
 
 *Component under contruction.*
+
