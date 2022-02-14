@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Avatar, List, Skeleton, Image } from "antd";
+import { Avatar, Col, Row, Skeleton, Image } from "antd";
 import {
   WomanOutlined,
   ManOutlined,
@@ -11,7 +11,43 @@ import "./UserCard.scss";
 
 function UserCard(props) {
   return (
-    <List.Item
+    <>
+      
+    <Row className="list-item">
+      <Col span={8}>
+        <Link to={`/users/${props.uuid}`}>
+          <li >
+            <div>
+              <Avatar
+                  size={{ xs: 55, sm: 60, md: 65, lg: 75, xl: 75, xxl: 75 }}
+                  src={props.picture.large}
+                />
+            </div>
+            <div className="list-item-content">
+              <h4>{props.name.first} {props.name.last}</h4>
+              <p>{props.email}</p>
+            </div>
+          </li>
+        </Link>
+      </Col>
+      <Col span={8} className="list-item-content" >
+        <p>{props.location.country}, {props.location.state}, {props.location.city}</p>
+      </Col>
+      <Col span={6} className="list-item-content" >
+        <DeleteOutlined
+          style={{ color: "#eb008b", float: "right" }}
+          onClick={() => props.onDelete(props.uuid)}
+        />
+      </Col>
+    </Row>
+  </>
+  );
+}
+
+export default UserCard;
+
+/*
+<List.Item
       key={props.uuid}
       className="user-item"
       actions={[
@@ -65,7 +101,4 @@ function UserCard(props) {
         />
       </Skeleton>
     </List.Item>
-  );
-}
-
-export default UserCard;
+**/

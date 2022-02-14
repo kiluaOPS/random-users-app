@@ -1,22 +1,33 @@
-.user-item {
-  margin-left: 20px;
-
-  span {
-    margin-top: 5px;
-    color: rgba(0, 0, 0, 0.45);
+.list-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.199);
+  margin: 0 25px 10px 25px;
+  li {
+    display: flex;
+    padding-bottom: 5px;
+    padding-top: 5px;
   }
-
-  h4,
-  p,
-  span {
-    font-size: 1em;
+  &:last-child{
+    border-bottom: none;
   }
-
-  .anticon-delete {
-    font-size: 25px;
+  &-image {
+    border-radius: 50%;
+    width: 64px;
+  }
+  &-content{
+    margin-left: 20px;
+    h4, p{
+      margin: 0;
+    }
+    h4{
+      font-size: 18px;
+    }
+    p{
+      margin-top: 5px;
+      color: #aaa;
+      text-align: center;
+    }
   }
 }
-
 .ant-avatar-circle {
   border: 2px #eb0089c0 solid;
 }
