@@ -37,6 +37,7 @@ function UsersList(props) {
         }}
         renderItem={(user) => (
           <UserCard
+            key={user.login.uuid}
             uuid={user.login.uuid}
             picture={user.picture}
             name={user.name}
