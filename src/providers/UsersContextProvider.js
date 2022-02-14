@@ -3,9 +3,10 @@ import react, { useState, useEffect } from "react";
 import { apiProvider } from "../api/provider";
 
 const UsersContext = react.createContext({
+  users: [],
   isLoading: false,
   pagination: {},
-  onUserDelete: (uuid) => {},
+  onDelete: (uuid) => {},
   onFilter: (searchParameter) => {},
   onPaginationChange: (pagination) => {},
   filteredUsers: () => {},
