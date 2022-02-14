@@ -2,7 +2,7 @@
 
 URL: https://rndm-users-app.netlify.app 
 
-######UserCard
+###### UserCard
 
 | Property    | Description                          | Type                                           | Default |
 |-------------|--------------------------------------|------------------------------------------------|---------|
@@ -16,6 +16,6 @@ URL: https://rndm-users-app.netlify.app
 | onDelete    | Called when delete button is pressed | function(uuid)                                 |         |
 
 
-######UserDetail
+###### UserDetail
 
 *Component under contruction.*
