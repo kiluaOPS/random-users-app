@@ -11,10 +11,13 @@ function UserCard(props) {
       key={props.uuid}
       className="user-item"
       actions={[
+        <div className="user-item-action">
         <DeleteOutlined
-          style={{ color: "#eb008b" }}
+          style={{ display: "block"}}
           onClick={() => props.onDelete(props.uuid)}
-        />,
+        />
+        Delete
+        </div>,
       ]}
     >
       <Skeleton avatar title={false} loading={props.isLoading} active>
@@ -40,21 +43,23 @@ function UserCard(props) {
             </Link>
           }
           description={
-            <Row className="user-item-description" style={{ display: "flex" }}>
-              <Col style={{ flex: "0 1 200px" }}>{props.email}</Col>
-              <Col style={{ flex: "1 4 300px" }}>
+            <Row className="user-item-description">
+              <Col className="user-item-description-email">{props.email}</Col>
+              <Col style={{ flex: "1 6 auto"}}>
+                <p>{props.location.street?.number} {props.location.street?.name}, {props.location.postcode}
+                <br/>
                 {props.location.city}, {props.location.state},{" "}
                 {props.location.country}
+                </p>
               </Col>
               
-              <Col style={{ flex: "6 1 25px" }}>
+              <Col style={{ flex: "6 1 30px" }}>
                 {props.nationality === "CH" ? (
                   <Image
                     preview={false}
                     alt="CH"
                     src="./switzerland-flag.png"
-                    height={15}
-                    style={{ paddingLeft: 5 }}
+                    
                   />
                 ) : (
                   ""

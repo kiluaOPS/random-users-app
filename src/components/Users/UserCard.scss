@@ -1,5 +1,6 @@
 .user-item {
-  margin-left: 20px;
+  margin: 0 5px;
+  border-bottom: 1px #eb00892d solid!important;
 
   span {
     margin-top: 5px;
@@ -15,13 +16,43 @@
   }
 
   &-description {
-    margin-top: 10px;
+    display: flex;
+    color: rgba(23, 24, 24, 0.685);
+
+    &-email {
+      flex: 1 2 250px;
+      font-weight: 500;
+    }
   }
 
-  
+  &-action {
+    color: #eb008b;
+    font-weight: bold;
+
+    font-size: 0.75em;
+    margin-right: 5px;
+    @media screen and (min-width: 800px) {
+      //css code
+      margin-right: 50px;
+    }
+  }
+
+  .ant-image-img {
+    width: 30px;
+    height: 30px;
+    @media screen and (max-width: 500px) {
+
+      width: 15px;
+      height: 15px;
+    }
+  }
+
   .ant-avatar-circle {
     border: 2px #eb0089c0 solid;
   }
-
+  
 }
+
+
+
 

@@ -2,7 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 
-import "./App.css";
+import "./App.scss";
 import Home from "./pages/Home";
 import Users from "./pages/Users/Users";
 import NotFound from "./pages/NotFound";
@@ -26,9 +26,8 @@ function App() {
         </Menu>
       </Header>
       <Layout>
-        <Layout style={{ padding: "0 10px 10px" }}>
+        <Layout className="site-layout-background" >
           <Content
-            className="site-layout-background"
             style={{
               padding: 0,
               margin: 0,
