@@ -14,7 +14,7 @@ function UserCard(props) {
     <>
       
     <Row className="list-item">
-      <Col span={8}>
+      <Col flex="4 4 40vw">
         <Link to={`/users/${props.uuid}`}>
           <li >
             <div>
@@ -30,12 +30,12 @@ function UserCard(props) {
           </li>
         </Link>
       </Col>
-      <Col span={8} className="list-item-content" >
+      <Col flex="4 4 40vw" className="list-item-content" >
         <p>{props.location.country}, {props.location.state}, {props.location.city}</p>
       </Col>
-      <Col span={6} className="list-item-content" >
+      <Col flex="0 0 10vw" className="list-item-content" >
         <DeleteOutlined
-          style={{ color: "#eb008b", float: "right" }}
+          style={{ color: "#eb008b"}}
           onClick={() => props.onDelete(props.uuid)}
         />
       </Col>
